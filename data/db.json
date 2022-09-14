@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "My First Blog",
+            "body": "This is just a text to fill up the space in this place. It is still not long enough so I will keep typing. React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.",
+            "author": "Chioma",
+            "id": 1
+        },
+        {
+            "title": "Opening Party!",
+            "body": "This is just a text to fill up the space in this place. It is still not long enough so I will keep typing. React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.",
+            "author": "Victoria",
+            "id": 2
+        }
+    ]
+}
