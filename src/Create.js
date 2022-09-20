@@ -4,13 +4,13 @@ import { useHistory } from "react-router-dom";
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("chioma");
+  const [authors, setAuthors] = useState(["chioma"]);
   const [isPending, setIsPending] = useState(false);
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author };
+    const blog = { title, body, authors };
 
     setIsPending(true);
 
@@ -42,8 +42,11 @@ const Create = () => {
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-        <label>Blog author:</label>
-        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
+        <label>Blog authors:</label>
+        <select
+          value={authors}
+          onChange={(e) => setAuthors((state) => [...state, e.target.value])}
+        >
           <option value="chioma">chioma</option>
           <option value="victoria">victoria</option>
           <option value="abraham">abraham</option>
@@ -52,7 +55,7 @@ const Create = () => {
         {isPending && <button disabled>Adding Blog...</button>}
         <p>{title}</p>
         <p>{body}</p>
-        <p>{author}</p>
+        <p>{authors.map((author) => `${author},`)}</p>
       </form>
     </div>
   );
